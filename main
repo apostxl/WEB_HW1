@@ -1,0 +1,30 @@
+from abc import ABC, abstractmethod
+
+class UserInterface(ABC):
+    @abstractmethod
+    def show_menu(self):
+        pass
+    
+    @abstractmethod
+    def display_information(self, data):
+        pass
+
+class ConsoleUI(UserInterface):
+    def show_menu(self):
+        print("Main Menu:")
+        print("1. View Cryptocurrency Rates")
+        print("2. Open Notepad")
+        print("3. Access Contact Book")
+        print("4. File Sorter")
+        print("0. Exit")
+    
+    def display_information(self, data):
+        print(data)
+
+# Приклад використання:
+console_interface = ConsoleUI()
+console_interface.show_menu()
+
+# Приклад виклику методу відображення інформації:
+data_to_display = "This is some information to display."
+console_interface.display_information(data_to_display)
